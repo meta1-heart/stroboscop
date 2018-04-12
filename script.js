@@ -79,10 +79,12 @@ function setupGui() {
         .step(3);
     gui.add( circle, 'speed', -7, 7 )
         .name("Rotation speed")
-        .step(0.001);
-    gui.addColor(circle, 'color1');
-    gui.addColor(circle, 'color2');
-    gui.addColor(circle, 'color3');
+        .step(0.01)
+        .listen();
+    var fcolors = gui.addFolder('Colors');
+    fcolors.addColor(circle, 'color1');
+    fcolors.addColor(circle, 'color2');
+    fcolors.addColor(circle, 'color3');
 }
 
 function Update() {
