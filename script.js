@@ -106,11 +106,13 @@ function Draw() {
         let endAngle = (i + 1) * 2 * pi / circle.segments + rotationLength / dt;
         let j = i % 3;
         context.beginPath();
+        context.fillStyle = circle.colors[j];
+        context.strokeStyle = circle.colors[j];
         context.moveTo(x, y);
         context.arc(x, y, r, startAngle, endAngle);
         context.lineTo(x,y);
-        context.closePath();
-        context.fillStyle = circle.colors[j];
+        context.stroke();
         context.fill();
+        context.closePath();
     }
 }
